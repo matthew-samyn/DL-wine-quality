@@ -6,11 +6,14 @@ import numpy as np
 def plot_confusion_matrix(cm, classes,
                           normalize=False,
                           title='Confusion matrix',
-                          cmap=plt.cm.Blues):
+                          cmap=plt.cm.Blues,
+                          savefig_location = False):
     """
     This function prints and plots the confusion matrix.
     Normalization can be applied by setting `normalize=True`.
     """
+    plt.figure(figsize=(14,14))
+    plt.figure(facecolor=".9")
     plt.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
@@ -24,9 +27,11 @@ def plot_confusion_matrix(cm, classes,
                  horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
 
-    plt.tight_layout()
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
+
+    if savefig_location:
+        plt.savefig(savefig_location,bbox_inches="tight", dpi=800)
     plt.show()
 
 
@@ -47,6 +52,6 @@ def plot_and_print_loss(history):
     plt.legend()
     plt.grid(True)
     print(f"""Status at last epoch:
-test_score = {history.history['loss'][-1]}
-val_score  = {history.history['val_loss'][-1]}""")
+train_score = {history.history['loss'][-1]}
+val_score   = {history.history['val_loss'][-1]}""")
     plt.show()
