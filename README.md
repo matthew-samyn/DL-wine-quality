@@ -32,23 +32,17 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 ## Step by step explanation of how I did it
 #### 1. Categorised the quality, added this as an extra column: "target"  
 
-+-------+-----------------------------+
 | class | values                      |
-+=======+=============================+
+|-------|-----------------------------|
 | 0     | Quality below or equal to 5 |
-+-------+-----------------------------+
 | 1     | Quality above or equal to 6 |
-+-------+-----------------------------+
 
 
 ####  2. Neural network on unbalanced dataset, 2 categories
-+------------+-------------------+
 | Metric     | Score on test_set |
-+============+===================+
+|------------|-------------------|
 | Accuracy   | 0.744             |
-+------------+-------------------+
 | Loss_score | 0.516             |
-+------------+-------------------+
 
 ![](visuals/cm_best_unbalanced_NN_categories.png)
 
@@ -59,18 +53,20 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 
 #### 4. Neural network on a balanced dataset, 2 categories
 
++------------+-------------------+
 | Metric     | Score on test_set |
-|------------|-------------------|
++============+===================+
 | Accuracy   | 0.776             |
++------------+-------------------+
 | Loss_score | 0.490             |
++------------+-------------------+
+
 
 #### 5. Random forest on a balanced dataset, 2 categories
 
-+----------+-------+
 | Metric   | Score |
-+==========+=======+
+|----------|-------|
 | Accuracy | 0.79  |
-+----------+-------+
 
 ![](visuals/random_forest_2_categories.png)
 
@@ -78,46 +74,47 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 #### 6. Predicting a score instead of a category
 I decided to drop quality of "9", because there were just to few data points.
 
-+---------------+-----------------------+
 | quality value | number of data points |
-+===============+=======================+
+|---------------|-----------------------|
 | 3             | 30                    |
-+---------------+-----------------------+
 | 4             | 206                   |
-+---------------+-----------------------+
 | 5             | 1751                  |
-+---------------+-----------------------+
 | 6             | 2323                  |
-+---------------+-----------------------+
 | 7             | 855                   |
-+---------------+-----------------------+
 | 8             | 148                   |
-+---------------+-----------------------+
 | 9             | 5                     |
-+---------------+-----------------------+
 
 #### 7. Neural network on balanced dataset, using regression
 
++----------+-------+
 | Metric   | Score |
-|----------|-------|
++==========+=======+
 | Accuracy | 0.46  |
++----------+-------+
+
 
 ![](visuals/regression_best.png)
 
 #### 8. Random forest model
 
++----------+-------+
 | Metric   | Score |
-|----------|-------|
++==========+=======+
 | Accuracy | 0.52  |
++----------+-------+
+
 
 ![](visuals/random_forest_best.png)
 
 
 ## Contributors
 
++---------------+----------------------------------+
 | Name          | Github                           |
-|---------------|----------------------------------|
++===============+==================================+
 | Matthew Samyn | https://github.com/matthew-samyn |
++---------------+----------------------------------+
+
 
 
 
