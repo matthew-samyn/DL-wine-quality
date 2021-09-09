@@ -53,13 +53,10 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 
 #### 4. Neural network on a balanced dataset, 2 categories
 
-+------------+-------------------+
 | Metric     | Score on test_set |
-+============+===================+
+|------------|-------------------|
 | Accuracy   | 0.776             |
-+------------+-------------------+
 | Loss_score | 0.490             |
-+------------+-------------------+
 
 
 #### 5. Random forest on a balanced dataset, 2 categories
