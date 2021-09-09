@@ -20,6 +20,7 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 * imbalanced-learn==0.8.0
 
 ## Usage
+
 | File                             | Description                                                                 |
 |----------------------------------|-----------------------------------------------------------------------------|
 | assignment-files                 | Folder containing all the files we received to use on this project.         |
@@ -30,6 +31,7 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 
 ## Step by step explanation of how I did it
 #### 1. Categorised the quality, added this as an extra column: "target"  
+
 +-------+-----------------------------+
 | class | values                      |
 +=======+=============================+
@@ -51,26 +53,31 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 ![](visuals/cm_best_unbalanced_NN_categories.png)
 
 #### 3. Handling the unbalance in the data with a combination of under- and oversampling
+
 ![](visuals/uneven_data.png)
 ![](visuals/even_data.png)
 
 #### 4. Neural network on a balanced dataset, 2 categories
+
 | Metric     | Score on test_set |
 |------------|-------------------|
 | Accuracy   | 0.776             |
 | Loss_score | 0.490             |
 
 #### 5. Random forest on a balanced dataset, 2 categories
+
 +----------+-------+
 | Metric   | Score |
 +==========+=======+
 | Accuracy | 0.79  |
 +----------+-------+
+
 ![](visuals/random_forest_2_categories.png)
 
 
 #### 6. Predicting a score instead of a category
 I decided to drop quality of "9", because there were just to few data points.
+
 +---------------+-----------------------+
 | quality value | number of data points |
 +===============+=======================+
@@ -88,7 +95,9 @@ I decided to drop quality of "9", because there were just to few data points.
 +---------------+-----------------------+
 | 9             | 5                     |
 +---------------+-----------------------+
+
 #### 7. Neural network on balanced dataset, using regression
+
 | Metric   | Score |
 |----------|-------|
 | Accuracy | 0.46  |
@@ -96,6 +105,7 @@ I decided to drop quality of "9", because there were just to few data points.
 ![](visuals/regression_best.png)
 
 #### 8. Random forest model
+
 | Metric   | Score |
 |----------|-------|
 | Accuracy | 0.52  |
@@ -104,6 +114,7 @@ I decided to drop quality of "9", because there were just to few data points.
 
 
 ## Contributors
+
 | Name          | Github                           |
 |---------------|----------------------------------|
 | Matthew Samyn | https://github.com/matthew-samyn |
