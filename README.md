@@ -1,6 +1,8 @@
 # Deep learning - Wine Quality challenge
 ## Description
-  
+This was an assignment we got during our time at Becode.  
+The main goal was to gain more knowledge on how to work with neural networks.  
+For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 
 ## Installation
 ### Python version
@@ -15,10 +17,16 @@
 * keras==2.6.0
 * jupyter==1.0.0
 * jupyterlab==3.1.10
+* imbalanced-learn==0.8.0
 
 ## Usage
-| File | Description |
-|------|-------------|
+| File                             | Description                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
+| assignment-files                 | Folder containing all the files we received to use on this project.         |
+| models                           | Folder containing the best scoring models I came across                     |
+| functions.py                     | Python file used to store all the functions I used throughout this project. |
+| neural_network_categorical.ipynb | Jupyter notebook used for training a NN-model, on binary target.            |
+
 
 ## Step by step explanation of how I did it
 #### 1. Categorised the quality, added this as an extra column: "target"  
@@ -30,23 +38,38 @@
 | 1     | Quality above or equal to 6 |
 +-------+-----------------------------+
 
-####  2. The search for a high score: categorical neural network
+####  2. Neural network on unbalanced dataset, 2 categories
++------------+-------------------+
+| Metric     | Score on test_set |
++============+===================+
+| Accuracy   | 0.744             |
++------------+-------------------+
+| Loss_score | 0.516             |
++------------+-------------------+
+
+![](visuals/cm_best_unbalanced_NN_categories.png)
+
+#### 3. Handling the unbalance in the data with a combination of under- and oversampling
+![](visuals/uneven_data.png)
+![](visuals/even_data.png)
+
+#### 4. Neural network on a balanced dataset, 2 categories
+| Metric     | Score on test_set |
+|------------|-------------------|
+| Accuracy   | 0.776             |
+| Loss_score | 0.490             |
+
+#### 5. Random forest on a balanced dataset, 2 categories
++----------+-------+
+| Metric   | Score |
++==========+=======+
+| Accuracy | 0.79  |
++----------+-------+
+![](visuals/random_forest_2_categories.png)
 
 
-
-####  3. The search for a higher score: linear neural network
-It did a pretty good job at predicting the quality just looking at it visually,  
-but I was at a loss as to how I should give it a score.
-I rounded the predictions of the model,   
-and this is the confusion matrix I got out of it:
-![](images/Regression_neural_network_2_categories_explanation_paint.png)
-I noticed above that the model was actually doing a good job at what I did at my first step:  
-Categorising by 0 and 1
-![](images/Regression_neural_network_2_categories.png)
-**Perfection!**   
-But I wanted more.  
-The linear model seemed to be good at predicting quality of 5, 6 and 7.  
-Not coincidentally these were also the values of wich I had the most data on:
+#### 6. Predicting a score instead of a category
+I decided to drop quality of "9", because there were just to few data points.
 +---------------+-----------------------+
 | quality value | number of data points |
 +===============+=======================+
@@ -64,16 +87,19 @@ Not coincidentally these were also the values of wich I had the most data on:
 +---------------+-----------------------+
 | 9             | 5                     |
 +---------------+-----------------------+
+#### 7. Neural network on balanced dataset, using regression
+| Metric   | Score |
+|----------|-------|
+| Accuracy | 0.46  |
 
-#### 4. Upsampling my data
+![](visuals/regression_best.png)
 
+#### 8. Random forest model
+| Metric   | Score |
+|----------|-------|
+| Accuracy | 0.52  |
 
-
-
-
-
-
-
+![](visuals/random_forest_best.png)
 
 
 ## Contributors

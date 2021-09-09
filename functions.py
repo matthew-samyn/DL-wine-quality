@@ -55,3 +55,9 @@ def plot_and_print_loss(history):
 train_score = {history.history['loss'][-1]}
 val_score   = {history.history['val_loss'][-1]}""")
     plt.show()
+
+def binary_to_text(x):
+    if x == 1:
+        return "good"
+    else:
+        return "bad"
