@@ -38,6 +38,7 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 | 1     | Quality above or equal to 6 |
 +-------+-----------------------------+
 
+
 ####  2. Neural network on unbalanced dataset, 2 categories
 +------------+-------------------+
 | Metric     | Score on test_set |
