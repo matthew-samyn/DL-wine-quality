@@ -58,6 +58,7 @@ For this we used a [dataset on wine quality](https://archive.ics.uci.edu/ml/data
 | Accuracy   | 0.776             |
 | Loss_score | 0.490             |
 
+![](visuals/cm_best_balanced.png)
 
 #### 5. Random forest on a balanced dataset, 2 categories
 
